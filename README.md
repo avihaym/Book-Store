@@ -1,27 +1,40 @@
-# BookStore
+# Book Store
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.4.
+End to end web application, that help manage book store.
 
-## Development server
+● User can see a list of all books.
+● User can drill down into a specific book details page.
+● User can add/remove books to the bookstore catalog.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Requirements
 
-## Code scaffolding
+- Node.js
+- Git
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Installing
 
-## Build
+Clone the repo and install the dependencies.
+```
+git clone https://github.com/avihaym/Book-Store.git
+npm install (install client dependencies)
+cd server
+npm install (install server dependencies)
+```
+Run server
+```
+node app.js
+```
+Run client
+```
+ng serve
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Built With
 
-## Running unit tests
+* Frondend: Angular v6, HTML, CSS, JS, Bootstrap v4
+* Backend: Node v8.10.0
+* DB: MongoDB
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Authors
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+* **Avihay**

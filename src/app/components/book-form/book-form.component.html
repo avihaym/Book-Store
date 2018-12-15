@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <h1 class="display-4">Add Book</h1>
+  </div>
+  <form [formGroup]="bookForm" (ngSubmit)="submit()">
+    <div class="form-group col-sm-8 offset-sm-2 m3-3">
+      <label for="title">Title</label>
+      <input type="text" class="form-control" formControlName="title" required>
+      <div *ngIf="form.title.errors && (form.title.dirty || form.title.touched)" class="form-control-feedback">
+        <p class="text-danger" *ngIf="form.title.errors && form.title.errors.required">Title is required</p>
+      </div>
+    </div>
+    <div class="form-group col-sm-8 offset-sm-2">
+      <label for="description">Description</label>
+      <input type="text" class="form-control" formControlName="description" required>
+      <div *ngIf="form.description.errors && (form.description.dirty || form.description.touched)" class="form-control-feedback">
+        <p class="text-danger" *ngIf="form.description.errors && form.description.errors.required">Description is required</p>
+      </div>
+    </div>
+    <div class="form-group col-sm-8 offset-sm-2">
+      <label for="name">ISBN number</label>
+      <input type="text" class="form-control" formControlName="isbn" required>
+      <div *ngIf="form.isbn.errors && (form.isbn.dirty || form.isbn.touched)" class="form-control-feedback">
+        <p class="text-danger" *ngIf="form.isbn.errors && form.isbn.errors.required">ISBN number is required</p>
+        <p class="text-danger" *ngIf="form.isbn.errors && form.isbn.errors.validISBN">Please enter a valid ISBN number</p>
+      </div>
+    </div>
+    <div class="form-group col-sm-8 offset-sm-2">
+      <label for="name">Author</label>
+      <input type="text" class="form-control" formControlName="author" required>
+      <div *ngIf="form.author.errors && (form.author.dirty || form.author.touched)" class="form-control-feedback">
+        <p class="text-danger" *ngIf="form.author.errors && form.author.errors.required">Author is required</p>
+      </div>
+    </div>
+    <div class="form-group col-sm-8 offset-sm-2">
+      <label for="date">Publication Date</label>
+      <div class="input-group">
+        <input class="form-control" formControlName="pubDate" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker" required>
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>
+        </div>
+      </div>
+      <div *ngIf="form.pubDate.errors && (form.pubDate.dirty || form.pubDate.touched)" class="form-control-feedback">
+        <p class="text-danger" *ngIf="form.pubDate.errors && form.pubDate.errors.required">Publication date is required</p>
+        <p class="text-danger" *ngIf="form.pubDate.errors && form.pubDate.errors.validDate">Publication date must be in yyyy-mm-dd format</p>
+      </div>
+    </div>
+    <div class="form-group col-sm-8 offset-sm-2">
+      <label for="genre">Genre</label>
+      <select class="form-control" formControlName="genre" required>
+        <option *ngFor="let genre of genres" [value]="genre">{{genre}}</option>
+      </select>
+    </div>
+    <div class="form-group col-sm-8 offset-sm-2">
+      <label for="price">Price</label>
+      <input type="number" class="form-control" formControlName="price" step="0.01" required>
+      <div *ngIf="form.price.errors && (form.price.dirty || form.price.touched)" class="form-control-feedback">
+        <p class="text-danger" *ngIf="form.price.errors && form.price.errors.required">Price is required</p>
+        <p class="text-danger" *ngIf="form.price.errors && form.price.errors.pattern">Price must be in x.xx format</p>
+      </div>
+    </div>
+    <div class="col text-center">
+      <button routerLink="/" type="button" class="btn mr-3">Back</button>
+      <button type="submit" class="btn btn-info my-1">Submit</button>
+
+    </div>
+  </form>
+</div>
