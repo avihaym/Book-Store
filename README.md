@@ -2,9 +2,9 @@
 
 End to end web application, that help manage book store.
 
-● User can see a list of all books.
-● User can drill down into a specific book details page.
-● User can add/remove books to the bookstore catalog.
+* User can see a list of all books.
+* User can drill down into a specific book details page.
+* User can add/remove books to the bookstore catalog.
 
 ### Requirements
 
