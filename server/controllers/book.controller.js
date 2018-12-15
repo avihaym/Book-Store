@@ -31,7 +31,7 @@ exports.createBook = function (req, res) {
 
 exports.deleteBook = function (req, res) {
   var Book = mongoose.model("books");
-  Book.findOneAndDelete(req.params.id, (err, result) => {
+  Book.findByIdAndRemove(req.params.id, (err, result) => {
     if (err) {
       console.error(err.message);
       res.json({status: "error", msg: err.message});
